@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shankar Lonare - Mobile Application Developer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-category h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+        }
+
+        .skill-category li:before {
+            content: "▹ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            border-color: #667eea;
+        }
+
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .experience-item:before {
+            content: '';
+            position: absolute;
+            left: -30px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #667eea;
+        }
+
+        .experience-item h3 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .duration {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .experience-item ul {
+            margin-left: 20px;
+            color: #555;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .projects-grid,
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border-left: 4px solid #f5576c;
+        }
+
+        .education {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .education-item {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .education-item h3 {
+            color: #5a67d8;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Shankar Lonare</h1>
+            <p class="tagline">Mobile Application Developer | Kotlin • Flutter • Android • iOS</p>
+            <div class="contact-info">
+                <a href="tel:+917987379214">📱 +91 7987379214</a>
+                <a href="mailto:shanky367@gmail.com">✉️ shanky367@gmail.com</a>
+                <a href="https://www.linkedin.com/in/shankar-lonare/" target="_blank">💼 LinkedIn</a>
+                <a href="https://github.com/shankar-lonare" target="_blank">💻 GitHub</a>
+            </div>
+        </header>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <div class="summary">
+                <p>Mobile Application Developer with 6+ years of experience in building scalable, high-performance, and user-centric apps across Android (Kotlin, Java, Jetpack Compose, KMP) and Flutter.</p>
+                <p>I specialize in end-to-end development including architecture design, API integration, state management, performance optimization, CI/CD, testing, and app store deployment. My proven track record spans e-commerce, retail, POS, logistics, and services platforms.</p>
+            </div>
+            <div class="highlight">
+                <strong>🎯 Core Strengths:</strong> Modular architecture • Clean code practices • Cross-functional collaboration • Mentoring • Performance optimization • End-to-end feature ownership
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Mobile Development</h3>
+                    <ul>
+                        <li>Kotlin (Coroutines, Flow)</li>
+                        <li>Flutter / Dart</li>
+                        <li>Jetpack Compose</li>
+                        <li>KMP (Kotlin Multiplatform)</li>
+                        <li>Swift (iOS Basics)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture</h3>
+                    <ul>
+                        <li>MVVM, MVI, Clean Architecture</li>
+                        <li>Dependency Injection (Hilt, Dagger, Koin)</li>
+                        <li>Modularization</li>
+                        <li>State Management (BLoC, Provider, Riverpod)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & APIs</h3>
+                    <ul>
+                        <li>REST, GraphQL</li>
+                        <li>Room, Hive, DataStore</li>
+                        <li>SQLite, SharedPreferences</li>
+                        <li>OkHttp</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Tools</h3>
+                    <ul>
+                        <li>Git, GitHub, GitLab</li>
+                        <li>CI/CD (GitHub Actions)</li>
+                        <li>Firebase Suite</li>
+                        <li>App Store Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Testing & Quality</h3>
+                    <ul>
+                        <li>JUnit, Espresso</li>
+                        <li>Flutter Widget Test</li>
+                        <li>SonarQube, Kover</li>
+                        <li>Code Reviews</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Analytics</h3>
+                    <ul>
+                        <li>MoEngage, CleverTap</li>
+                        <li>Appsflyer, Singular</li>
+                        <li>Firebase Analytics</li>
+                        <li>Crashlytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>IBO Mart & KPNfresh</h3>
+                    <p>E-commerce and quick commerce platform for building materials and household goods with real-time delivery capabilities.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Jetpack Compose</span>
+                        <span class="tech-tag">KMP</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/developer?id=Ebo+Mart+Private+Ltd" target="_blank" class="btn">Google Play</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>SAVO Mart</h3>
+                    <p>Comprehensive e-commerce solution with advanced features for seamless shopping experience.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Kotlin</span>
+                        <span class="tech-tag">Jetpack Compose</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/developer?id=SAVOmart&hl=en_IN" target="_blank" class="btn">Google Play</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>KPN Fresh</h3>
+                    <p>Fresh farm products delivery platform with multiple apps for riders, stores, and operations management.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Kotlin</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/developer?id=KPN+Fresh" target="_blank" class="btn">Google Play</a>
+                        <a href="https://play.google.com/store/apps/details?id=com.kpn.android" target="_blank" class="btn btn-secondary">KPN App</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>SAVO POS System</h3>
+                    <p>Advanced POS system built with Flutter Linux enabling real-time grocery delivery with offline billing and invoice sync.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter Desktop</span>
+                        <span class="tech-tag">Linux</span>
+                        <span class="tech-tag">Offline-First</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>KPN Rider & Operations</h3>
+                    <p>Logistics and warehouse management suite for optimized delivery management and operations.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Real-time Sync</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>The Kabadiwala</h3>
+                    <p>Scrap pickup and recycling management app with 50k+ downloads on Play Store.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/search?q=kabadiwala&c=apps" target="_blank" class="btn">Play Store</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Alshiaka Shopping App</h3>
+                    <p>Premium fabrics and menswear shopping app for Dubai market with enhanced UI responsiveness.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Iris Store</h3>
+                    <p>Store management application designed for salon businesses.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Kotlin</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>ITC Stores</h3>
+                    <p>E-commerce platform for ITC product distribution and retail management.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Kotlin</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>International Projects</h3>
+                    <p><strong>Tellmelive:</strong> Dating application (Germany)<br>
+                    <strong>AfterCareTattoo:</strong> Tattoo aftercare guide app (Germany)</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">International</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <h3>SDE II</h3>
+                    <div class="company">EBO Mart, Bangalore</div>
+                    <div class="duration">January 2024 – Present</div>
+                    <ul>
+                        <li>Led development of IBO Mart & KPNfresh using Kotlin, Jetpack Compose, and KMP</li>
+                        <li>Architected SAVO POS on Flutter Linux with real-time sync capabilities</li>
+                        <li>Developed KPN Rider, Store, and operations apps for delivery management</li>
+                        <li>Implemented Firebase distribution reducing deployment time by 25%</li>
+                        <li>Improved test coverage by 30% through comprehensive testing strategies</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>SDE I</h3>
+                    <div class="company">Embitel Technologies, Bangalore</div>
+                    <div class="duration">March 2022 – January 2024</div>
+                    <ul>
+                        <li>Spearheaded mobile development for EBO Mart, KPN Fresh Farm, and ITC Stores</li>
+                        <li>Integrated analytics platforms: Firebase Remote Config, CleverTap, MoEngage, Appsflyer</li>
+                        <li>Implemented targeted push campaigns and user segmentation</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Flutter Developer</h3>
+                    <div class="company">Clientele, Bangalore</div>
+                    <div class="duration">January 2021 – March 2022</div>
+                    <ul>
+                        <li>Built Alshiaka Shopping App for Dubai market</li>
+                        <li>Enhanced UI responsiveness across multiple device resolutions</li>
+                        <li>Delivered premium e-commerce experience for fabric and menswear</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Flutter Developer</h3>
+                    <div class="company">The Kabadiwala, Bhopal</div>
+                    <div class="duration">November 2019 – January 2021</div>
+                    <ul>
+                        <li>Developed scrap pickup and recycling app with 50k+ downloads</li>
+                        <li>Implemented Firebase distribution for warehouse management</li>
+                        <li>Built internal tools for store operations</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Android Developer</h3>
+                    <div class="company">Xtranet Technologies, Bhopal</div>
+                    <div class="duration">March 2018 – November 2019</div>
+                    <ul>
+                        <li>Created Android apps with Kotlin/Java for retail and enterprise</li>
+                        <li>Developed ERP application for ESS module</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Associate Android Developer</h3>
+                    <div class="company">Appworks Technologies, Bhopal</div>
+                    <div class="duration">January 2017 – March 2018</div>
+                    <ul>
+                        <li>Contributed to Android app development with focus on client delivery</li>
+                        <li>Learned Android architecture and best practices under senior mentorship</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="education-item">
+                    <h3>M.Tech in Computer Science</h3>
+                    <p>RGPV University (UIT), Bhopal</p>
+                    <p>2016 - 2018</p>
+                </div>
+                <div class="education-item">
+                    <h3>B.Tech in Computer Science</h3>
+                    <p>RGPV University (UIT), Bhopal</p>
+                    <p>2011 - 2015</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Shankar Lonare. All rights reserved.</p>
+            <p>Building innovative mobile solutions with passion and precision.</p>
+        </footer>
+    </div>
+</body>
+</html>
